@@ -1,0 +1,18 @@
+{
+  "name": "nicklasos/db2cloud",
+  "description": "Backup db to google cloud",
+  "authors": [
+    {
+      "name": "Nikita Olkhovik",
+      "email": "nicklasos@gmail.com"
+    }
+  ],
+  "require": {
+    "symfony/console": "~2.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "db2cloud": "app/"
+    }
+  }
+}
