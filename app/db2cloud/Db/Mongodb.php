@@ -1,6 +1,8 @@
 <?php
 namespace db2cloud\Db;
 
+use db2cloud\Archive\Zip;
+
 final class Mongodb implements DbInterface
 {
     public function backup($db)
@@ -13,6 +15,10 @@ final class Mongodb implements DbInterface
 
         shell_exec($command);
 
-        return $out . '/' . $db;
+        $backup = $out . '/' . $db;
+
+        $archive = (new Zip())->archive($backup);
+
+        return $archive;
     }
 }

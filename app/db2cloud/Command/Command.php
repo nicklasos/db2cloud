@@ -14,6 +14,16 @@ use Symfony\Component\Console\Output\OutputInterface as Out;
 abstract class Command extends Console\Command\Command
 {
     /**
+     * @var In
+     */
+    protected $in;
+
+    /**
+     * @var Out
+     */
+    protected $out;
+
+    /**
      * @return DbInterface
      */
     abstract protected function getDb();
@@ -32,11 +42,13 @@ abstract class Command extends Console\Command\Command
 
     public function execute(In $in, Out $out)
     {
+        $this->in = $in;
+        $this->out = $out;
+
         $backup = $this->getDb()->backup($in->getOption('db'));
-        $archive = (new Zip())->archive($backup);
 
         $cloud = new GoogleCloudStorage($in->getOption('gsutil'));
-        $cloud->move($archive, $this->format($in->getArgument('format')));
+        $cloud->move($backup, $this->format($in->getArgument('format')));
     }
 
     private function format($format)

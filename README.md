@@ -4,10 +4,14 @@ Backup your db (mysql, mongo) to cloud (google cloud storage)
 ##Formats
 * %host - computers host
 * %rand - random value
-* d, D, Y, y, etc... - dates
+* d, D, Y, y - Year, month, etc.
 
 ##Example
 
 ```bash
-db2cloud mongodb "mongodb_backup/%host/%Y/%m/backup-%rand.zip" --db database-name --gsutil="/usr/bin/gsutil"
+#MongoDB
+db2cloud mongodb "mongodb_backup/%host/%Y/%m/backup-%rand.zip" --db database_name --gsutil="/usr/bin/gsutil"
+
+#MySQL
+db2cloud mysql "mongodb_backup/%host/mysql.sql.gz" --mysqldump="/usr/local/mysql/bin/mysqldump" --user="root" --pass="securePassword" --db="database_name"
 ```
