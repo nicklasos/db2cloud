@@ -4,7 +4,7 @@ Backup your db (mysql, mongo) to cloud (google cloud storage)
 ##Formats
 * %host - computers host
 * %rand - random value
-* d, D, Y, y - Year, month, etc.
+* %d, %D, %Y, %y - Year, month, etc. Tip - %W - week of the year
 
 ##Example
 
