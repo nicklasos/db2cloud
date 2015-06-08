@@ -58,7 +58,7 @@ abstract class Command extends Console\Command\Command
             '%rand' => mt_rand(),
         ];
 
-        $timePlaceholders = ['d', 'D', 'm', 'M', 'y', 'Y', 'h', 'H', 'i', 's'];
+        $timePlaceholders = ['d', 'D', 'm', 'M', 'y', 'Y', 'h', 'H', 'i', 's', 'W'];
 
         $date = new DateTime('now', new \DateTimeZone('UTC'));
         foreach ($timePlaceholders as $placeholder) {
