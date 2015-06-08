@@ -60,7 +60,7 @@ abstract class Command extends Console\Command\Command
 
         $timePlaceholders = ['d', 'D', 'm', 'M', 'y', 'Y', 'h', 'H', 'i', 's'];
 
-        $date = new DateTime();
+        $date = new DateTime('now', new \DateTimeZone('UTC'));
         foreach ($timePlaceholders as $placeholder) {
             $replace['%' . $placeholder] = $date->format($placeholder);
         }

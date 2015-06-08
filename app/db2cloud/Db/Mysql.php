@@ -6,7 +6,7 @@ namespace db2cloud\Db;
  * gunzip < [backupfile.sql.gz] | mysql -u [uname] -p[pass] [dbname]
  * mysqlimport -u [uname] -p[pass] [dbname] [backupfile.sql]
  */
-class Mysql implements DbInterface
+final class Mysql implements DbInterface
 {
     private $mysqldump;
     private $user;
