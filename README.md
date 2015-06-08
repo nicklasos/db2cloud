@@ -15,3 +15,5 @@ db2cloud mongodb "mongodb_backup/%host/%Y/%m/backup-%rand.zip" --db database_nam
 #MySQL
 db2cloud mysql "mongodb_backup/%host/mysql.sql.gz" --mysqldump="/usr/local/mysql/bin/mysqldump" --user="root" --pass="securePassword" --db="database_name"
 ```
+
+You can mix it with crontab for cyclic backups!
