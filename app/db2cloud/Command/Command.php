@@ -2,7 +2,6 @@
 namespace db2cloud\Command;
 
 use DateTime;
-use db2cloud\Archive\Zip;
 use db2cloud\Cloud\GoogleCloudStorage;
 use db2cloud\Db\DbInterface;
 use Symfony\Component\Console;
