@@ -10,8 +10,8 @@ final class Mongodb implements DbInterface
         $out = sys_get_temp_dir() . '/' . 'mongo_backup_' . mt_rand();
 
         $command = 'mongodump' .
-            ' --db ' . $db.
-            ' --out ' . $out;
+            ' --db="' . $db . '"' .
+            ' --out="' . $out . '"';
 
         shell_exec($command);
 
